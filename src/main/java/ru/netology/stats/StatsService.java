@@ -1,23 +1,23 @@
 package ru.netology.stats;
 
 public class StatsService {
-    public int getSalesAmount(int[] sales) {
+    public int getSalesAmount(long[] sales) {
         int amount = 0;
-        for (int s : sales) {
+        for (long s : sales) {
             amount += s;
         }
         return amount;
     }
 
-    public int averageAmount(int[] sales) {
-        int average = 0;
-        for (int s : sales) {
+    public long averageAmount(long[] sales) {
+        long average = 0;
+        for (long s : sales) {
             average = s + average;
         }
-        return average / sales.length;
+        return (average / sales.length);
     }
 
-    public int getMaxMonth(int[] sales) {
+    public int getMaxMonth(long[] sales) {
         int maxMonth = 0;
         for (int i = 0; i < sales.length; i++) {
             if (sales[i] >= sales[maxMonth]) {
@@ -27,7 +27,7 @@ public class StatsService {
         return maxMonth + 1;
     }
 
-    public int getMinMonth(int[] sales) {
+    public int getMinMonth(long[] sales) {
         int minMonth = 0;
         for (int i = 0; i < sales.length; i++) {
             if (sales[i] <= sales[minMonth]) {
@@ -37,10 +37,10 @@ public class StatsService {
         return minMonth + 1;
     }
 
-    public int getLowSales(int[] sales) {
+    public int getLowSales(long[] sales) {
         int lowSales = 0;
-        int midAmount = averageAmount(sales);
-        for (int s : sales) {
+        long midAmount = averageAmount(sales);
+        for (long s : sales) {
             if (s < midAmount) {
                 lowSales = lowSales + 1;
             }
@@ -48,10 +48,10 @@ public class StatsService {
         return lowSales;
     }
 
-    public int getHighSales(int[] sales) {
+    public int getHighSales(long[] sales) {
         int highSales = 0;
-        int midAmount = averageAmount(sales);
-        for (int s : sales) {
+        long midAmount = averageAmount(sales);
+        for (long s : sales) {
             if (s > midAmount) {
                 highSales = highSales + 1;
             }
