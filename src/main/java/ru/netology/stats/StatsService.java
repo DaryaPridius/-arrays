@@ -1,7 +1,7 @@
 package ru.netology.stats;
 
 public class StatsService {
-    public int getSalesAmount(long[] sales) {
+    public long getSalesAmount(long[] sales) {
         int amount = 0;
         for (long s : sales) {
             amount += s;

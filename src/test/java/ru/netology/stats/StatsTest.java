@@ -10,8 +10,8 @@ public class StatsTest {
     public void shouldFindAmount() {
         StatsService service = new StatsService();
         long[] sales = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
-        int expected = 180;
-        int actual = service.getSalesAmount(sales);
+        long expected = 180;
+        long actual = service.getSalesAmount(sales);
 
         Assertions.assertEquals(expected, actual);
     }
@@ -22,7 +22,7 @@ public class StatsTest {
     public void shouldFindAverageAmount() {
         StatsService service = new StatsService();
         long[] sales = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
-        int expected = 15;
+        long expected = 15;
         long actual = service.averageAmount(sales);
 
         Assertions.assertEquals(expected, actual);
